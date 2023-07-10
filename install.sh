@@ -31,9 +31,6 @@ else
     exit 1
 fi
 
-for x in cut tar gzip sudo; do
-    which $x > /dev/null || (echo "Unable to continue.  Please install $x before proceeding."; exit 1)
-done
 
 DISTRO=$(cat /etc/issue /etc/system-release /etc/redhat-release /etc/os-release 2>/dev/null | grep -m 1 -Eo "(Ubuntu|Amazon|CentOS|Debian|Red Hat|SUSE)" || true)
 
